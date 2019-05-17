@@ -18,9 +18,11 @@ Get project : `git clone https://github.com/keuss/spingboot-udev.git`
  
 ## Test
 
-Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add somme books first ;-)
+Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add some books first ;-)
 
 POST http://localhost:8080/api/books
+
+with payload :
 ```
 {
 	"title": "LOTR 1",
