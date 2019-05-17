@@ -3,6 +3,8 @@ spingboot-udev
 
 3 controller REST see : com.example.demo.controller
 
+`git clone https://github.com/keuss/spingboot-udev.git`
+
 ## Buid
 
  - `mvn clean install`
