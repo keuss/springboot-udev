@@ -10,7 +10,7 @@ Get project : `git clone https://github.com/keuss/spingboot-udev.git`
 
 ## Buid
 
- - `mvn clean install`
+ - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
  
 ## Run
 
