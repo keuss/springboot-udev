@@ -15,6 +15,8 @@ spingboot-udev
  
 ## Test
 
+Use Postman to test the REST services ...
+
 POST http://localhost:8080/api/books
 ```
 {
