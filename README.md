@@ -1,6 +1,8 @@
 # spingboot-udev
 spingboot-udev
 
+3 controller REST see : com.example.demo.controller
+
 ## Buid
 
  - `mvn clean install`
@@ -22,3 +24,5 @@ POST http://localhost:8080/api/books
 GET http://localhost:8080/api/books/
 
 GET http://localhost:8080/api/books/1
+
+GET http://localhost:8080/api/books/author/toto
