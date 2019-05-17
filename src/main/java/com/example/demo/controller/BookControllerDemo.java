@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(value = "mybooks", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BookControllerDemo {
 
-
+    // for simple tests
     private List<BookJSON> bookJSONS = new ArrayList<>();
 
     public BookControllerDemo() {
@@ -32,7 +32,7 @@ public class BookControllerDemo {
 
     @RequestMapping(method = RequestMethod.GET, value = "{id}")
     public BookJSON getBook(@PathVariable long id) {
-        // TODO search y in in bookJSONS
+        // TODO search in bookJSONS with id
         BookJSON bookJSON = new BookJSON();
         bookJSON.setId(1L);
         bookJSON.setTitle("");
