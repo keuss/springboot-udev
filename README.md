@@ -1,7 +1,7 @@
 # spingboot-udev
 spingboot-udev
 
-3 controller REST see : com.example.demo.controller
+3 REST controllers, see : com.example.demo.controller
 
 `git clone https://github.com/keuss/spingboot-udev.git`
 
