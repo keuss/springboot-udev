@@ -1,7 +1,9 @@
 # spingboot-udev
-spingboot-udev
 
-3 REST controllers, see : com.example.demo.controller
+spingboot 2 example BOOK API projet
+
+ - 3 REST controllers, see : package `com.example.demo.controller`
+ - BookController use service with H2 mem DB see `application.properties` file
 
 `git clone https://github.com/keuss/spingboot-udev.git`
 
@@ -15,7 +17,7 @@ spingboot-udev
  
 ## Test
 
-Use Postman to test the REST services ...
+Use Postman to test the REST services ... must add somme books first ;-)
 
 POST http://localhost:8080/api/books
 ```
