@@ -1,11 +1,12 @@
 # spingboot-udev
 
-spingboot 2 example BOOK API projet
+spingboot 2 example BOOK API projet (list books, add books, find by author, ...)
 
+ - Build and run with open jdk 11 (https://openjdk.java.net/) min jdk 8, see <java.version> maven propertie
  - 3 REST controllers, see : package `com.example.demo.controller`
- - BookController use service with H2 mem DB see `application.properties` file
+ - BookController use service, spring data with H2 mem DB (see `application.properties` file)
 
-`git clone https://github.com/keuss/spingboot-udev.git`
+Get project : `git clone https://github.com/keuss/spingboot-udev.git`
 
 ## Buid
 
@@ -17,7 +18,7 @@ spingboot 2 example BOOK API projet
  
 ## Test
 
-Use Postman to test the REST services ... must add somme books first ;-)
+Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add somme books first ;-)
 
 POST http://localhost:8080/api/books
 ```
