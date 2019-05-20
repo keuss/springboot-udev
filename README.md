@@ -35,3 +35,7 @@ GET http://localhost:8080/api/books/
 GET http://localhost:8080/api/books/1
 
 GET http://localhost:8080/api/books/author/toto
+
+# DB H2
+
+ - See http://localhost:8080/api/h2-console/ (with JDBC URL : jdbc:h2:mem:testdb)
