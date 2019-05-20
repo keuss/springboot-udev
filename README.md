@@ -39,3 +39,10 @@ GET http://localhost:8080/api/books/author/toto
 # DB H2
 
  - See http://localhost:8080/api/h2-console/ (with JDBC URL : jdbc:h2:mem:testdb)
+ - See src/main/resources/db/runtime.sql for add data at start-up
+
+
+# Front
+
+ - see : https://gist.github.com/alexandre-jannotta/750e4f2817b7e08d51a0c9a6c100d3da for simple JQuery starter
+ - ok : https://github.com/keuss/react-udev for REACT JS example
