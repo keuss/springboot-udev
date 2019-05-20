@@ -39,3 +39,4 @@ GET http://localhost:8080/api/books/author/toto
 # DB H2
 
  - See http://localhost:8080/api/h2-console/ (with JDBC URL : jdbc:h2:mem:testdb)
+ - See src/main/resources/db/runtime.sql for add data at start-up
