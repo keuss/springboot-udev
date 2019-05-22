@@ -6,7 +6,7 @@ spingboot 2 example BOOK API projet (list books, add books, find by author, ...)
  - 3 REST controllers, see : package `com.example.demo.controller`
  - BookController use service, spring data with H2 mem DB (see `application.properties` file)
 
-Get project : `git clone https://github.com/keuss/spingboot-udev.git`
+Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
 ## Build
 
