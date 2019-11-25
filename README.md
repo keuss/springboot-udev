@@ -11,10 +11,19 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 ## Build
 
  - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
+ - See pom for unpack maven dependencies
+ - Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine, see https://github.com/docker-library/openjdk/issues/313)
  
-## Run
+## Run with docker
 
- - `java -jar target\demo-0.0.1-SNAPSHOT.jar`
+ - `docker run -d --name appbook_mico1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
+ 
+## Other docker commands
+
+ - `docker container ls --all` list containers
+ - `docker images` list images
+ - `docker container stop appbook_mico1` stop container
+ - `docker rm appbook_mico1` remove container
  
 ## Test
 
@@ -38,7 +47,7 @@ GET http://localhost:8080/api/books/author/toto
 
 # DB H2
 
- - See http://localhost:8080/api/h2-console/ (with JDBC URL : jdbc:h2:mem:testdb)
+ - See http://localhost:8080/api/h2-console/ (with JDBC URL : jdbc:h2:mem:testdb), to prevent H2 Console throwing a error webAllowOthers, must set `spring.h2.console.settings.web-allow-others` to true
  - See src/main/resources/db/runtime.sql for add data at start-up
 
 
