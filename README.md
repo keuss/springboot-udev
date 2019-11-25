@@ -14,6 +14,10 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  - See pom for unpack maven dependencies
  - Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine, see https://github.com/docker-library/openjdk/issues/313)
  
+## Swagger
+
+ - http://localhost:8080/api/swagger-ui.html 
+ 
 ## Run with docker
 
  - `docker run -d --name appbook_mico1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)

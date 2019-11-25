@@ -12,7 +12,7 @@ public class HelloController {
     @GetMapping(value = "{name}")
     public String hello(@PathVariable("name") String name) {
 
-        // TEST with http://localhost:8080/hello/keuss
+        // TEST with http://localhost:8080/api/hello/keuss
         return "{\"data\": \"Hello UDEV " + name + "\"}";
     }
 }

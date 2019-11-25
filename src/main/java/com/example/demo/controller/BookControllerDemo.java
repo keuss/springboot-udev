@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(value = "mybooks", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BookControllerDemo {
 
-    // for simple tests
+    // for simple tests (see BookController)
     private List<BookJSON> bookJSONS = new ArrayList<>();
 
     public BookControllerDemo() {
