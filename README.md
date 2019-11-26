@@ -1,8 +1,8 @@
 # spingboot-udev
 
-spingboot 2 example BOOK API projet (list books, add books, find by author, ...)
+Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...)
 
- - Build and run with open jdk 11 (https://openjdk.java.net/) min jdk 8, see <java.version> maven property
+ - Build and run with open jdk 13 (https://openjdk.java.net/, https://jdk.java.net/13/) min jdk 8, see <java.version> maven property
  - 3 REST controllers, see : package `com.example.demo.controller`
  - BookController use service, spring data with H2 mem DB (see `application.properties` file)
 
@@ -12,7 +12,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
  - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
  - See pom for unpack maven dependencies
- - Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine, see https://github.com/docker-library/openjdk/issues/313)
+ - Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine)
  
 ## Swagger IU
 
@@ -20,14 +20,15 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  
 ## Run with docker
 
- - `docker run -d --name appbook_mico1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
+ - `docker run -d --name appbook_micro1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
  
 ## Other docker commands
 
  - `docker container ls --all` list containers
  - `docker images` list images
- - `docker container stop appbook_mico1` stop container
- - `docker rm appbook_mico1` remove container
+ - `docker container stop appbook_micro1` stop container
+ - `docker rm appbook_micro1` remove container
+ - `docker rmi <id-image>` remove image
  
 ## Test
 
