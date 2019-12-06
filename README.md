@@ -52,7 +52,7 @@ GET http://localhost:8080/api/books/author/toto
 
 # DB H2
 
- - See http://localhost:8080/api/h2-console/ (with JDBC URL : jdbc:h2:mem:testdb), to prevent H2 Console throwing a error webAllowOthers, must set `spring.h2.console.settings.web-allow-others` to true
+ - See http://localhost:8080/api/h2-console/ (with JDBC URL : `jdbc:h2:mem:testdb`), to prevent H2 Console throwing a error webAllowOthers, must set `spring.h2.console.settings.web-allow-others` to true
  - See src/main/resources/db/runtime.sql for add data at start-up
 
 
