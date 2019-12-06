@@ -24,7 +24,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  
 ## Other docker commands
 
- - `docker container ls --all` list containers
+ - `docker container ls --all` list containers (or `docker ps`)
  - `docker images` list images
  - `docker container stop appbook_micro1` stop container
  - `docker rm appbook_micro1` remove container
