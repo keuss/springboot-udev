@@ -56,6 +56,22 @@ GET http://localhost:8080/api/books/author/toto
  - See src/main/resources/db/runtime.sql for add data at start-up
 
 
+# REDIS Container
+
+See https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b to avoid connection error from containers !
+
+```
+docker network list
+docker network create myNetwork
+docker network list
+docker pull redis
+docker run --name my-redis-container -d -p 6379:6379 --network myNetwork redis:latest
+docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
+```
+
+ - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
+
+
 # Front
 
  - see : https://gist.github.com/alexandre-jannotta/750e4f2817b7e08d51a0c9a6c100d3da for simple JQuery starter
