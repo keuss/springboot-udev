@@ -30,26 +30,6 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  - `docker rm appbook_micro1` remove container
  - `docker rmi <id-image>` remove image
  
-## Test
-
-Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add some books first.
-
-POST http://localhost:8080/api/books
-
-with payload :
-```
-{
-	"title": "LOTR 1",
-	"author": "toto"
-}
-```
-
-GET http://localhost:8080/api/books/
-
-GET http://localhost:8080/api/books/1
-
-GET http://localhost:8080/api/books/author/toto
-
 # DB H2
 
  - See http://localhost:8080/api/h2-console/ (with JDBC URL : `jdbc:h2:mem:testdb`), to prevent H2 Console throwing a error webAllowOthers, must set `spring.h2.console.settings.web-allow-others` to true
@@ -73,8 +53,28 @@ docker run --name my-redis-container -d -p 6379:6379 --network myNetwork redis:l
 docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
 ```
 
-`docker network inspect myNetwork` to see containers connected to our network.
+`docker network inspect myNetwork` to see containers connected to our network. See https://docs.docker.com/network/ pour more info.
 
  - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
  - Test `redis-cli` (https://redis.io/topics/quickstart)
 
+
+## Test
+
+Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add some books first.
+
+POST http://localhost:8080/api/books
+
+with payload :
+```
+{
+	"title": "LOTR 1",
+	"author": "toto"
+}
+```
+
+GET http://localhost:8080/api/books/
+
+GET http://localhost:8080/api/books/1
+
+GET http://localhost:8080/api/books/author/toto
