@@ -56,9 +56,13 @@ GET http://localhost:8080/api/books/author/toto
  - See src/main/resources/db/runtime.sql for add data at start-up
 
 
-# REDIS Container
+# REDIS cache
 
-See https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b to avoid connection error from containers !
+ - With docker container
+ - With Jedis java client (https://redis.io/clients#java, https://github.com/xetorthio/jedis)
+
+
+See https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b to connect different docker containers. Here we don't use Docker Compose.
 
 ```
 docker network list
@@ -69,10 +73,8 @@ docker run --name my-redis-container -d -p 6379:6379 --network myNetwork redis:l
 docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
 ```
 
+`docker network inspect myNetwork` to see containers connected to our network.
+
  - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
+ - Test `redis-cli` (https://redis.io/topics/quickstart)
 
-
-# Front
-
- - see : https://gist.github.com/alexandre-jannotta/750e4f2817b7e08d51a0c9a6c100d3da for simple JQuery starter
- - ok : https://github.com/keuss/react-udev for REACT JS example
