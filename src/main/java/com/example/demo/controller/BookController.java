@@ -58,4 +58,11 @@ public class BookController {
     public List<BookJSON> getAllByAuthor(@ApiParam(value = "Author", required = true) @PathVariable String author) {
         return bookService.getAllBooksByAuthor(author);
     }
+
+    @ApiOperation(value = "Get Book by Title")
+    @RequestMapping(method = RequestMethod.GET, value = "/title/{title}")
+    // FIXME not good path for REST ...
+    public List<BookJSON> getAllByTitle(@ApiParam(value = "Title", required = true) @PathVariable String title) {
+        return bookService.getAllBooksByTitle(title);
+    }
 }

@@ -43,4 +43,9 @@ public class BookService {
         List<Book> bookList = bookRepository.findByAuthor(author);
         return mapper.mapTo(bookList);
     }
+
+    public List<BookJSON> getAllBooksByTitle(String title) {
+        List<Book> bookList = bookRepository.findByTitle(title);
+        return mapper.mapTo(bookList);
+    }
 }
