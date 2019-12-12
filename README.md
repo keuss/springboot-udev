@@ -33,6 +33,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  - `docker container stop appbook_micro1` stop container
  - `docker rm appbook_micro1` remove container
  - `docker rmi <id-image>` remove image
+ - `docker network rm <NETWORK>` remove one or more networks
  
 # DB H2
 
