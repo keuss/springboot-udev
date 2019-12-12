@@ -1,5 +1,9 @@
 # spingboot-udev
 
+## Plugin IDE
+
+ - Use lombok
+
 Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...)
 
  - Build and run with open jdk 13 (https://openjdk.java.net/, https://jdk.java.net/13/) min jdk 8, see <java.version> maven property
