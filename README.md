@@ -45,7 +45,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
 # REDIS cache
 
- - Only with !dev spring profile
+ - Only with !dev spring profile (dev mode use spring NoOpCacheManager)
  - With docker container
  - With Jedis java client (https://redis.io/clients#java, https://github.com/xetorthio/jedis)
 
