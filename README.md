@@ -25,6 +25,8 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  
 ## Run with docker
 
+
+ - For Windows hyper-v (Win 10 min) : https://docs.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
  - `docker run -d --name appbook_micro1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
  
 ## Other docker commands
