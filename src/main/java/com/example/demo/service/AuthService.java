@@ -39,7 +39,8 @@ public class AuthService {
     }
 
     public boolean isAuthorize(String token) {
-        if (token != null && !token.isEmpty() && cacheManager != null) {
+        if (token != null && !token.isEmpty() && cacheManager != null
+                && cacheManager.getCache("users").get("hashUserId") != null) {
             String tokenInCache = (String) cacheManager.getCache("users").get("hashUserId").get();
             return tokenInCache != null && !tokenInCache.isEmpty() ? tokenInCache.equals(token) : false;
         }
