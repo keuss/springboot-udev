@@ -17,7 +17,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
  - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
  - See pom for unpack maven dependencies
- - Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine)
+ - Build Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine)
  
 ## Swagger IU
 
@@ -58,10 +58,12 @@ docker network create myNetwork
 docker network list
 docker pull redis
 docker run --name my-redis-container -d -p 6379:6379 --network myNetwork redis:latest
-docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
+docker run -ti --rm --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
 ```
 
 `docker network inspect myNetwork` to see containers connected to our network. See https://docs.docker.com/network/ pour more info.
+
+Better to use docker compose :-)
 
  - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
  - Test `redis-cli` (https://redis.io/topics/quickstart)
