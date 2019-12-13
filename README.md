@@ -7,7 +7,7 @@
 Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...)
 
  - Build and run with open jdk 13 (https://openjdk.java.net/, https://jdk.java.net/13/) min jdk 8, see <java.version> maven property
- - 3 REST controllers, see : package `com.example.demo.controller`
+ - REST controllers, see : package `com.example.demo.controller`
  - BookController use service, spring data with H2 mem DB (see `application.properties` file)
  - To changhe api port see application.properties
 
@@ -63,7 +63,7 @@ docker run -ti --rm --name appbook_micro1 -p 8080:8080 --network myNetwork booka
 
 `docker network inspect myNetwork` to see containers connected to our network. See https://docs.docker.com/network/ pour more info.
 
-Better to use docker compose :-)
+**Better to use docker compose :-). See Docker compose section !**
 
  - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
  - Test `redis-cli` (https://redis.io/topics/quickstart)
@@ -89,7 +89,15 @@ GET http://localhost:8080/api/books/1
 
 GET http://localhost:8080/api/books/author/toto
 
+## Docker compose
+
+ - `mvn clean install` (with 'myredis' host)
+ - docker-compose build
+ - docker-compose up
+
+
 ## Doc
 
  - Spring Boot: https://www.baeldung.com/spring-boot
+ - Docker compose networking : https://docs.docker.com/compose/networking/
  
