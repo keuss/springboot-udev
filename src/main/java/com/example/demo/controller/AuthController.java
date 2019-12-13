@@ -21,7 +21,7 @@ public class AuthController {
     @Resource
     AuthService authService;
 
-    @ApiOperation(value = "Authticate user", response = AuthResponse.class)
+    @ApiOperation(value = "Authenticate user", response = AuthResponse.class)
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     public AuthResponse authenticate(@ApiParam(value = "User Fields") @Valid @RequestBody AuthJSON authJSON) {
         return authService.authenticate(authJSON);
