@@ -63,6 +63,8 @@ docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:
 
 `docker network inspect myNetwork` to see containers connected to our network. See https://docs.docker.com/network/ pour more info.
 
+Better to use docker compose :-)
+
  - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
  - Test `redis-cli` (https://redis.io/topics/quickstart)
 
