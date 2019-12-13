@@ -47,7 +47,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
  - Only with !dev spring profile (dev mode use spring NoOpCacheManager)
  - With docker container
- - With Jedis java client (https://redis.io/clients#java, https://github.com/xetorthio/jedis)
+ - With Jedis java client (https://redis.io/clients#java, https://github.com/xetorthio/jedis). Other option in Lettuce
 
 
 See https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b to connect different docker containers. Here we don't use Docker Compose.
@@ -101,4 +101,5 @@ GET http://localhost:8080/api/books/author/toto
 
  - Spring Boot: https://www.baeldung.com/spring-boot
  - Docker compose networking : https://docs.docker.com/compose/networking/
+ - Issue for communication between Spring Boot and Redis containers : https://stackoverflow.com/questions/51488311/docker-compose-spring-boot-redis-connection-issue/51518375, https://stackoverflow.com/questions/46135373/communication-between-spring-boot-and-redis-containers, https://stackoverflow.com/questions/51827759/spring-boot-redis-getting-connection-refused-exception-when-using-redis
  
