@@ -58,7 +58,7 @@ docker network create myNetwork
 docker network list
 docker pull redis
 docker run --name my-redis-container -d -p 6379:6379 --network myNetwork redis:latest
-docker run --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
+docker run -ti --rm --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
 ```
 
 `docker network inspect myNetwork` to see containers connected to our network. See https://docs.docker.com/network/ pour more info.
