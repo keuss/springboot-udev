@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 @Data
 public class AuthResponse implements Serializable {
-    private String appToken;
     private boolean isAuthenticate = false;
-    private boolean isAuthorize = false;
+    private String authorizeToken;
 }

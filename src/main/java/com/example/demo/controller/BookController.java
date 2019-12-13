@@ -7,6 +7,7 @@ import com.example.demo.service.BookService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 
+@Slf4j
 @Api(tags = {"Book"})
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -46,7 +48,7 @@ public class BookController {
                             @ApiParam(value = "Book to Add", required = true) @Valid @RequestBody BookJSON book) {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty
         // or JPA RollbackException (DB side)
-        if (!authService.authorize(authorization)) {
+        if (!authService.isAuthorize(authorization)) {
             throw new ForbiddenException();
         }
         return bookService.addBook(book);
