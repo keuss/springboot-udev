@@ -9,6 +9,7 @@ Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...
  - Build and run with open jdk 13 (https://openjdk.java.net/, https://jdk.java.net/13/) min jdk 8, see <java.version> maven property
  - 3 REST controllers, see : package `com.example.demo.controller`
  - BookController use service, spring data with H2 mem DB (see `application.properties` file)
+ - To changhe api port see application.properties
 
 Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
