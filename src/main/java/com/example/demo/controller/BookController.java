@@ -44,13 +44,13 @@ public class BookController {
     @ApiOperation(value = "Add Book", response = BookJSON.class)
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public BookJSON addBook(@ApiParam(value = "Authorization token", required = true) @RequestHeader("Authorization") String authorization,
+    public BookJSON addBook(@ApiParam(value = "Authorization token") @RequestHeader("Authorization") String authorization,
                             @ApiParam(value = "Book to Add", required = true) @Valid @RequestBody BookJSON book) {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty
         // or JPA RollbackException (DB side)
-        if (!authService.isAuthorize(authorization)) {
+        /*if (!authService.isAuthorize(authorization)) {
             throw new ForbiddenException();
-        }
+        }*/
         return bookService.addBook(book);
     }
 
