@@ -92,8 +92,9 @@ GET http://localhost:8080/api/books/author/toto
 ## Docker compose
 
  - `mvn clean install` (with 'myredis' host)
- - docker-compose build
- - docker-compose up
+ - `docker-compose build` (don't forget to re-build image with this after update code !)
+ - `docker-compose up`: start
+ - `docker-compose down`: stop
 
 
 ## Doc
