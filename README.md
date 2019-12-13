@@ -4,7 +4,7 @@
 
  - Use lombok
 
-Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...)
+Sping Boot 2 example BOOK API projet (list books, add books, find by author or title, ...)
 
  - Build and run with open jdk 13 (https://openjdk.java.net/, https://jdk.java.net/13/) min jdk 8, see <java.version> maven property
  - REST controllers, see : package `com.example.demo.controller`
@@ -13,7 +13,7 @@ Sping Boot 2 example BOOK API projet (list books, add books, find by author, ...
 
 Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
-## Build
+## Build app
 
  - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
  - See pom for unpack maven dependencies
@@ -24,7 +24,6 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  - http://localhost:8080/api/swagger-ui.html (https://swagger.io/)
  
 ## Run with docker
-
 
  - For Windows hyper-v (Win 10 min) : https://docs.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
  - `docker run -d --name appbook_micro1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
@@ -97,7 +96,6 @@ GET http://localhost:8080/api/books/author/toto
  - `docker-compose build` (don't forget to re-build image with this after update code !)
  - `docker-compose up`: start
  - `docker-compose down`: stop
-
 
 ## Doc
 
