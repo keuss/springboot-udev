@@ -19,7 +19,7 @@ public class CacheConfiguration {
     @Bean
     public JedisConnectionFactory redisConnectionFactory() {
         log.info("Call redisConnectionFactory ...");
-        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration("127.0.0.1", 6379);
+        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration("myredis", 6379);
         return new JedisConnectionFactory(configuration);
     }
 
