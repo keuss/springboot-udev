@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.helper.Mapper;
+import com.example.demo.helper.BookMapper;
 import com.example.demo.pojo.Book;
 import com.example.demo.pojo.BookJSON;
 import com.example.demo.repository.BookRepository;
@@ -19,33 +19,33 @@ public class BookService {
     private BookRepository bookRepository;
 
     @Resource
-    private Mapper mapper;
+    private BookMapper bookMapper;
 
     public List<BookJSON> getAllBooks() {
         log.info("Called for getAllBooks ...");
         List<Book> bookList = bookRepository.findAll();
-        return mapper.mapTo(bookList);
+        return bookMapper.mapTo(bookList);
     }
 
     @Cacheable(cacheManager = "redisCacheManager", cacheNames = "books", key = "#id")
     public BookJSON getBookById(long id) {
         log.info("Called for getBookById ...");
         Book b = bookRepository.getOne(id);
-        return mapper.mapTo(b);
+        return bookMapper.mapTo(b);
     }
 
     public BookJSON addBook(BookJSON book) {
-        Book b = bookRepository.save(mapper.mapTo(book));
-        return mapper.mapTo(b);
+        Book b = bookRepository.save(bookMapper.mapTo(book));
+        return bookMapper.mapTo(b);
     }
 
     public List<BookJSON> getAllBooksByAuthor(String author) {
         List<Book> bookList = bookRepository.findByAuthor(author);
-        return mapper.mapTo(bookList);
+        return bookMapper.mapTo(bookList);
     }
 
     public List<BookJSON> getAllBooksByTitle(String title) {
         List<Book> bookList = bookRepository.findByTitle(title);
-        return mapper.mapTo(bookList);
+        return bookMapper.mapTo(bookList);
     }
 }

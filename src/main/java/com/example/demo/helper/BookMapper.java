@@ -5,11 +5,15 @@ import com.example.demo.pojo.BookJSON;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class Mapper {
+public class BookMapper {
+
+    @Resource
+    private VersionMapper versionMapper;
 
     public Book mapTo(BookJSON bookJSON) {
         Assert.notNull(bookJSON, "The bookJSON must not be null");
@@ -26,6 +30,7 @@ public class Mapper {
         bJSON.setTitle(book.getTitle());
         bJSON.setAuthor(book.getAuthor());
         bJSON.setId(book.getId());
+        bJSON.setVersions(versionMapper.mapTo(book.getVersionList()));
         return bJSON;
     }
 
