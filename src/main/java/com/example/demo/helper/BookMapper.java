@@ -2,6 +2,7 @@ package com.example.demo.helper;
 
 import com.example.demo.pojo.Book;
 import com.example.demo.pojo.BookJSON;
+import com.example.demo.pojo.BookJSONRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -14,15 +15,6 @@ public class BookMapper {
 
     @Resource
     private VersionMapper versionMapper;
-
-    public Book mapTo(BookJSON bookJSON) {
-        Assert.notNull(bookJSON, "The bookJSON must not be null");
-        Book b = new Book();
-        // must not set id !
-        b.setTitle(bookJSON.getTitle());
-        b.setAuthor(bookJSON.getAuthor());
-        return b;
-    }
 
     public BookJSON mapTo(Book book) {
         Assert.notNull(book, "The book must not be null");
@@ -37,5 +29,14 @@ public class BookMapper {
     public List<BookJSON> mapTo(List<Book> bookList) {
         Assert.notNull(bookList, "The bookList must not be null");
         return bookList.stream().map(this::mapTo).collect(Collectors.toList());
+    }
+
+    public Book mapTo(BookJSONRequest bookJSONRequest) {
+        Assert.notNull(bookJSONRequest, "The bookJSONRequest must not be null");
+        Book b = new Book();
+        // must not set id !
+        b.setTitle(bookJSONRequest.getTitle());
+        b.setAuthor(bookJSONRequest.getAuthor());
+        return b;
     }
 }

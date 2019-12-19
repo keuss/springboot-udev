@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.helper.BookMapper;
 import com.example.demo.pojo.Book;
 import com.example.demo.pojo.BookJSON;
+import com.example.demo.pojo.BookJSONRequest;
 import com.example.demo.repository.BookRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
@@ -34,7 +35,7 @@ public class BookService {
         return bookMapper.mapTo(b);
     }
 
-    public BookJSON addBook(BookJSON book) {
+    public BookJSON addBook(BookJSONRequest book) {
         Book b = bookRepository.save(bookMapper.mapTo(book));
         return bookMapper.mapTo(b);
     }

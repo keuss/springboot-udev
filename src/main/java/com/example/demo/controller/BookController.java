@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.exceptions.ForbiddenException;
 import com.example.demo.pojo.BookJSON;
+import com.example.demo.pojo.BookJSONRequest;
 import com.example.demo.service.AuthService;
 import com.example.demo.service.BookService;
 import io.swagger.annotations.Api;
@@ -45,12 +45,12 @@ public class BookController {
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public BookJSON addBook(@ApiParam(value = "Authorization token", required = true) @RequestHeader("Authorization") String authorization,
-                            @ApiParam(value = "Book to Add", required = true) @Valid @RequestBody BookJSON book) {
+                            @ApiParam(value = "Book to Add", required = true) @Valid @RequestBody BookJSONRequest book) {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty
         // or JPA RollbackException (DB side)
-        if (!authService.isAuthorize(authorization)) {
+        /*if (!authService.isAuthorize(authorization)) {
             throw new ForbiddenException();
-        }
+        }*/
         return bookService.addBook(book);
     }
 
