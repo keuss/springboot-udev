@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.exceptions.ForbiddenException;
 import com.example.demo.pojo.BookJSON;
 import com.example.demo.pojo.BookJSONRequest;
 import com.example.demo.service.AuthService;
@@ -48,9 +49,9 @@ public class BookController {
                             @ApiParam(value = "Book to Add", required = true) @Valid @RequestBody BookJSONRequest book) {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty
         // or JPA RollbackException (DB side)
-        /*if (!authService.isAuthorize(authorization)) {
+        if (!authService.isAuthorize(authorization)) {
             throw new ForbiddenException();
-        }*/
+        }
         return bookService.addBook(book);
     }
 
