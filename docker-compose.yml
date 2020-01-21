@@ -2,13 +2,21 @@ version: "3"
 services:
   myapp:
     build: .
+    container_name: myapp
     restart: always
     ports:
       - "8080:8080"
     depends_on:
       - myredis
+    environment:
+      FOO: BAR-DOCKER
+      MYAPP.DATASOURCE.URL: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+      MYAPP.DATASOURCE.DRIVERCLASSNAME: org.h2.Driver
+      MYAPP.DATASOURCE.USERNAME: sa
+      MYAPP.DATASOURCE.PASSWORD:
   myredis:
     image: redis
+    container_name: myredis
     restart: always
     ports:
       - "6379:6379"

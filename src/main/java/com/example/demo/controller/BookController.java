@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,10 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(value = "books", produces = MediaType.APPLICATION_JSON_VALUE)
 public class BookController {
+
+    @Value("${test.myparam}")
+    String param;
+
 
     @Resource
     private BookService bookService;
@@ -39,6 +44,7 @@ public class BookController {
     @ApiOperation(value = "Get one Book", response = BookJSON.class)
     @RequestMapping(method = RequestMethod.GET, value = "{id}")
     public BookJSON getBook(@ApiParam(value = "Book id", required = true) @PathVariable long id) {
+        log.info("param [{}]", param);
         return bookService.getBookById(id);
     }
 
