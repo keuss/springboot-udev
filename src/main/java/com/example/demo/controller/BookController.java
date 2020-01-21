@@ -50,6 +50,7 @@ public class BookController {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty
         // or JPA RollbackException (DB side)
         if (!authService.isAuthorize(authorization)) {
+            log.error("Forbidden ERROR !");
             throw new ForbiddenException();
         }
         return bookService.addBook(book);

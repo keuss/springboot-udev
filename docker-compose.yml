@@ -2,9 +2,13 @@ version: "3"
 services:
   myapp:
     build: .
+    restart: always
     ports:
       - "8080:8080"
+    depends_on:
+      - myredis
   myredis:
     image: redis
+    restart: always
     ports:
       - "6379:6379"
