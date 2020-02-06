@@ -8,12 +8,8 @@ services:
       - "8080:8080"
     depends_on:
       - myredis
-    environment:
-      FOO: BAR-DOCKER
-      MYAPP.DATASOURCE.URL: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
-      MYAPP.DATASOURCE.DRIVERCLASSNAME: org.h2.Driver
-      MYAPP.DATASOURCE.USERNAME: sa
-      MYAPP.DATASOURCE.PASSWORD:
+    env_file:
+      - myapp-variables.env
   myredis:
     image: redis
     container_name: myredis
