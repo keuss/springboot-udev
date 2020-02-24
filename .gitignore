@@ -30,3 +30,6 @@ HELP.md
 
 ### other files ###
 *.log
+
+### glowroot db ###
+glowroot-vol/data/*.db
