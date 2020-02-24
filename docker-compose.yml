@@ -6,10 +6,14 @@ services:
     restart: always
     ports:
       - "8080:8080"
+      - "4000:4000"
     depends_on:
       - myredis
     env_file:
       - myapp-variables.env
+    volumes:
+      - ./glowroot-vol/data:/app/glowroot/data
+      - ./glowroot-vol/logs:/app/glowroot/logs
   myredis:
     image: redis
     container_name: myredis
