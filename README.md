@@ -96,6 +96,10 @@ GET http://localhost:8080/api/books/author/toto
  - `docker-compose build` (don't forget to re-build image with this after update code !)
  - `docker-compose up`: start
  - `docker-compose down`: stop
+ 
+## Glowroot APM
+
+ - See http://localhost:4000/ and docker-compose.yml (https://github.com/glowroot/glowroot/wiki/Agent-Installation-(with-Embedded-Collector))
 
 ## Doc
 
