@@ -89,6 +89,8 @@
 						<goals>
 							<!-- Don't use repackage goal for exclude lib-provided -->
 							<!-- Obtaining build information -->
+							<!-- Here for SwaggerConfig -->
+							<!-- See https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/build-info.html -->
 							<goal>build-info</goal>
 						</goals>
 					</execution>
