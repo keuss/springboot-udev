@@ -100,6 +100,7 @@ GET http://localhost:8080/api/books/author/toto
 ## Doc
 
  - Spring Boot: https://www.baeldung.com/spring-boot
+ - https://spring.io/guides/topicals/spring-boot-docker/ (see A Better Dockerfile)
  - Docker compose networking : https://docs.docker.com/compose/networking/
  - Issue for communication between Spring Boot and Redis containers : https://stackoverflow.com/questions/51488311/docker-compose-spring-boot-redis-connection-issue/51518375, https://stackoverflow.com/questions/46135373/communication-between-spring-boot-and-redis-containers, https://stackoverflow.com/questions/51827759/spring-boot-redis-getting-connection-refused-exception-when-using-redis
  
