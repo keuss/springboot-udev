@@ -1,11 +1,8 @@
 # spingboot-udev
 
-## Plugin IDE
+Sping Boot 2 example BOOK API projet (list books, add books, find by author or title, ...) with docker, h2 db and redis cache
 
  - Use lombok
-
-Sping Boot 2 example BOOK API projet (list books, add books, find by author or title, ...)
-
  - Build and run with open jdk 8, see <java.version> maven property
  - REST controllers, see : package `com.example.demo.controller`
  - BookController use service, spring data with H2 mem DB (see `application.properties` file)
