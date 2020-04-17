@@ -25,7 +25,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
  
 ## Run with docker
 
- - For Windows hyper-v (Win 10 min) : https://docs.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+ - [For Windows hyper-v](https://docs.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) (Win 10 min)
  - `docker run -d --name appbook_micro1 -p 8080:8080 bookapp_image:1.0.0` (Detached (-d), without to see terminal log)
  
 ## Other docker commands
@@ -48,10 +48,10 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
  - Only with !dev spring profile (dev mode use spring NoOpCacheManager)
  - With docker container
- - With Jedis java client (https://redis.io/clients#java, https://github.com/xetorthio/jedis). Other option in Lettuce
+ - With [Jedis java client](https://github.com/xetorthio/jedis). Other option si Lettuce. See [here](https://redis.io/clients#java)
 
 
-See https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b to connect different docker containers. Here we don't use Docker Compose.
+See [here](https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b) to connect different docker containers. If we don't use Docker Compose :-(
 
 ```
 docker network list
@@ -62,7 +62,7 @@ docker run --name my-redis-container -d -p 6379:6379 --network myNetwork redis:l
 docker run -ti --rm --name appbook_micro1 -p 8080:8080 --network myNetwork bookapp_image:1.0.0
 ```
 
-`docker network inspect myNetwork` to see containers connected to our network. See https://docs.docker.com/network/ pour more info.
+`docker network inspect myNetwork` to see containers connected to our network. See [here](https://docs.docker.com/network/) for more info.
 
 **Better to use docker compose :-). See Docker compose section !**
 
@@ -72,7 +72,7 @@ docker run -ti --rm --name appbook_micro1 -p 8080:8080 --network myNetwork booka
 
 ## Test
 
-Use for instance Postman to test the REST services https://www.getpostman.com/downloads/ ... must add some books first.
+Use for instance [Postman](https://www.getpostman.com/downloads/) to test the REST services ... must add some books first.
 
 POST http://localhost:8080/api/books
 
