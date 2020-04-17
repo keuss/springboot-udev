@@ -64,7 +64,7 @@ docker run -ti --rm --name appbook_micro1 -p 8080:8080 --network myNetwork booka
 
 `docker network inspect myNetwork` to see containers connected to our network. See [here](https://docs.docker.com/network/) for more info.
 
-**Better to use docker compose :-). See Docker compose section !**
+**Better to use docker compose :-). [See Docker compose section !](https://github.com/keuss/springboot-udev/blob/master/README.md#docker-compose)**
 
  - Connection to container with bash : `docker exec -it my-redis-container /bin/bash`
  - Test `redis-cli` (https://redis.io/topics/quickstart)
