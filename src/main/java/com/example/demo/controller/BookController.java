@@ -43,7 +43,7 @@ public class BookController {
 
     @ApiOperation(value = "Get one Book", response = BookJSON.class)
     @RequestMapping(method = RequestMethod.GET, value = "{id}")
-    public BookJSON getBook(@ApiParam(value = "Book id", required = true) @PathVariable long id) {
+    public BookJSON getBook(@ApiParam(value = "Book id", required = true, example = "10") @PathVariable long id) {
         log.info("param [{}]", param);
         return bookService.getBookById(id);
     }
@@ -51,7 +51,7 @@ public class BookController {
     @ApiOperation(value = "Add Book", response = BookJSON.class)
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public BookJSON addBook(@ApiParam(value = "Authorization token", required = true) @RequestHeader("Authorization") String authorization,
+    public BookJSON addBook(@ApiParam(value = "Authorization token", required = true, example = "my token") @RequestHeader("Authorization") String authorization,
                             @ApiParam(value = "Book to Add", required = true) @Valid @RequestBody BookJSONRequest book) {
         // test with @Valid : @Valid @RequestBody ... get Spring Bad Request 400 if NotEmpty
         // or JPA RollbackException (DB side)
@@ -65,14 +65,14 @@ public class BookController {
     @ApiOperation(value = "Get Book by Author")
     @RequestMapping(method = RequestMethod.GET, value = "/author/{author}")
     // FIXME not good path for REST ...
-    public List<BookJSON> getAllByAuthor(@ApiParam(value = "Author", required = true) @PathVariable String author) {
+    public List<BookJSON> getAllByAuthor(@ApiParam(value = "Author", required = true, example = "author") @PathVariable String author) {
         return bookService.getAllBooksByAuthor(author);
     }
 
     @ApiOperation(value = "Get Book by Title")
     @RequestMapping(method = RequestMethod.GET, value = "/title/{title}")
     // FIXME not good path for REST ...
-    public List<BookJSON> getAllByTitle(@ApiParam(value = "Title", required = true) @PathVariable String title) {
+    public List<BookJSON> getAllByTitle(@ApiParam(value = "Title", required = true, example = "title") @PathVariable String title) {
         return bookService.getAllBooksByTitle(title);
     }
 }

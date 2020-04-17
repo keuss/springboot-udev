@@ -14,11 +14,11 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
  - `mvn clean install` (or use maven wrapper : ./mvnw clean install or build and run with ./mvnw spring-boot:run)
  - See pom for unpack maven dependencies
- - Build Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .` (with 13-jdk-alpine)
+ - Build Image : near Dockerfile launch `docker build --no-cache -t bookapp_image:1.0.0 .`
  
-## Swagger IU
+## [Swagger](https://swagger.io/) IU
 
- - http://localhost:8080/api/swagger-ui.html (https://swagger.io/)
+ - http://localhost:8080/api/swagger-ui.html
  
 ## Run with docker
 

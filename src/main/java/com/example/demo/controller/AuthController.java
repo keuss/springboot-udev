@@ -23,7 +23,7 @@ public class AuthController {
 
     @ApiOperation(value = "Authenticate user", response = AuthResponse.class)
     @RequestMapping(method = RequestMethod.POST, headers = {"Content-type=application/json"}, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public AuthResponse authenticate(@ApiParam(value = "User Fields") @Valid @RequestBody AuthJSON authJSON) {
+    public AuthResponse authenticate(@ApiParam(value = "User Fields", required = true) @Valid @RequestBody AuthJSON authJSON) {
         return authService.authenticate(authJSON);
     }
 }
