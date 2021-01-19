@@ -34,11 +34,13 @@ public class AuthService {
         // Do real authorization here ...
         // Manage user info outside the app : in redis cache (horizontal scaling for the app !)
         if (hashUserId != null && !hashUserId.isEmpty() && cacheManager != null) {
+            // FIXME BAD ! key must contain user identifier (see https://redislabs.com/solutions/use-cases/session-management/)
             cacheManager.getCache("users").put("hashUserId", hashUserId);
         }
     }
 
     public boolean isAuthorize(String token) {
+        // FIXME BAD ! key must contain user identifier (see https://redislabs.com/solutions/use-cases/session-management/)
         if (token != null && !token.isEmpty() && cacheManager != null
                 && cacheManager.getCache("users").get("hashUserId") != null) {
             String tokenInCache = (String) cacheManager.getCache("users").get("hashUserId").get();
