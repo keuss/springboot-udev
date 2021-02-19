@@ -57,6 +57,7 @@ public class BookController {
         // or JPA RollbackException (DB side)
         if (!authService.isAuthorize(authorization)) {
             log.error("Forbidden ERROR !");
+            // Comment this for easy test
             throw new ForbiddenException();
         }
         return bookService.addBook(book);

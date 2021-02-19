@@ -23,6 +23,7 @@ public class BookMapper {
         bJSON.setAuthor(book.getAuthor());
         bJSON.setId(book.getId());
         bJSON.setVersions(versionMapper.mapTo(book.getVersionList()));
+        bJSON.setNbOfVersion(book.getNbOfVersion());
         return bJSON;
     }
 
@@ -34,7 +35,7 @@ public class BookMapper {
     public Book mapTo(BookJSONRequest bookJSONRequest) {
         Assert.notNull(bookJSONRequest, "The bookJSONRequest must not be null");
         Book b = new Book();
-        // must not set id !
+        // must not set id and calculated Formula !
         b.setTitle(bookJSONRequest.getTitle());
         b.setAuthor(bookJSONRequest.getAuthor());
         return b;

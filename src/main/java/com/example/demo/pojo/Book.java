@@ -1,6 +1,7 @@
 package com.example.demo.pojo;
 
 import lombok.Data;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -14,6 +15,8 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Formula("(select count(v.id) from version v where v.book_id = id)")
+    private Integer nbOfVersion;
     @NotEmpty
     private String title;
     @NotEmpty

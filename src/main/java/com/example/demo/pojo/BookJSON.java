@@ -12,5 +12,6 @@ public class BookJSON extends BookJSONRequest implements Serializable {
 
     private Long id;
     private List<VersionJSON> versions;
+    private Integer nbOfVersion;
 
 }
