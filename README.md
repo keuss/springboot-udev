@@ -45,7 +45,7 @@ Get project : `git clone https://github.com/keuss/springboot-udev.git`
 
  - Only with !dev spring profile (dev mode use spring NoOpCacheManager)
  - With docker container
- - With [Jedis java client](https://github.com/xetorthio/jedis). Other option si Lettuce. See [here](https://redis.io/clients#java)
+ - With [Jedis java client](https://github.com/xetorthio/jedis). Other option is Lettuce. See [here](https://redis.io/clients#java)
 
 
 See [here](https://medium.com/@jaaq/making-docker-containers-talk-to-each-other-by-hostname-using-container-networking-94835a6f6a5b) to connect different docker containers. If we don't use Docker Compose :-(
